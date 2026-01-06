@@ -1,0 +1,118 @@
+.rn-doctor {
+  padding: 6rem 0;
+
+  @include lg-up{
+    padding: 8rem 0 10rem;
+  }
+
+  &__wrapper {
+    @include lg-up{
+      display: flex;
+      gap: 4.83rem;
+      align-items: flex-start;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+    margin-bottom: 3.6rem;
+    text-align: left;
+    color: #0f172a;
+
+    @media (min-width: 768px) {
+      font-size: 4rem;
+      line-height: 3.6rem;
+      flex-shrink: 0;
+    }
+    @include lg-up {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.15rem;
+
+    @include md-up {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3.84rem;
+      flex: 1;
+    }
+  }
+
+  &__card {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    @media (min-width: 768px) {
+      border-radius: 2rem;
+    }
+
+    &:hover {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 344 / 299;
+
+    @media (min-width: 768px) {
+      aspect-ratio: 366.419 / 318.486;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 6rem 2.4rem 2.4rem 2.4rem;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(15, 23, 42, 0.85) 100%
+    );
+
+    @media (min-width: 768px) {
+      padding: 8rem 3.2rem 3.2rem 3.2rem;
+    }
+  }
+
+  &__name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.4rem;
+    line-height: 2.25rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.92rem;
+      line-height: 2.4rem;
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  &__role {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    line-height: 2.25rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+      line-height: 2.4rem;
+    }
+  }
+}

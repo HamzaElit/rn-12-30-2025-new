@@ -1,0 +1,153 @@
+.rn-clinic-intro {
+  padding: 6rem 0;
+
+  @include lg-up {
+    padding: 10rem 0;
+  }
+
+  .btns-wrp {
+    justify-content: flex-start;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    @include lg-up {
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: center;
+    }
+  }
+
+  &__content {
+    order: 1;
+
+    @include lg-up {
+      order: 0;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--White);
+    margin-bottom: 1.5rem;
+
+    @include lg-up {
+      max-width: 40rem;
+      font-size: 4rem;
+      line-height: 1.25;
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__subtitle {
+    font-family: var(--font-text);
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.43;
+    color: var(--Secondary);
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+
+    @include lg-up {
+      max-width: 40rem;
+      font-size: 2rem;
+      line-height: 1.45;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__video {
+    order: 2;
+
+    @include lg-up {
+      order: 0;
+    }
+  }
+
+  &__video-wrapper {
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0.5rem 0.7rem 1rem 0 rgba(0, 0, 0, 0.25);
+
+    @include lg-up {
+      box-shadow: 1.4rem 1.8rem 1.3rem 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &.playing {
+      .rn-clinic-intro__video-cover,
+      .rn-clinic-intro__play-btn {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      .rn-clinic-intro__iframe-wrapper {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__video-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 341 / 189;
+    object-fit: cover;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    @include lg-up {
+      aspect-ratio: 767 / 426;
+    }
+  }
+
+  &__play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+
+    img {
+      width: 5.6rem;
+      height: 5.6rem;
+
+      @include lg-up {
+        width: 8rem;
+        height: 8rem;
+      }
+    }
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+
+  &__iframe-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}

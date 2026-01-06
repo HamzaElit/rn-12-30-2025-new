@@ -1,0 +1,353 @@
+.rn-process-steps {
+  padding: 6rem 0;
+
+  @include lg-up {
+    padding: 0 0 8rem;
+  }
+
+  &__wrapper {
+
+    @include lg-up {
+      display: flex;
+      gap: 5rem;
+      align-items: flex-start;
+    }
+  }
+
+  &__content {
+    margin-bottom: 3rem;
+
+    @include lg-up {
+      flex-shrink: 0;
+      width: 54.9rem;
+      max-width: 40%;
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3.6rem;
+    color: var(--Black);
+    margin-bottom: 1.6rem;
+
+    @include lg-up {
+      font-size: 4rem;
+      line-height: 5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 4.3rem;
+    color: var(--Primary);
+    text-transform: uppercase;
+    margin: 0;
+
+    @include lg-up {
+      font-size: 2rem;
+    }
+  }
+
+  &__accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    @include lg-up {
+      flex: 1;
+      gap: 1.6rem;
+    }
+  }
+
+  &__item {
+    background-color: var(--Primary);
+    border: 0.116rem solid var(--Primary);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    @include lg-up {
+      border-radius: 1.455rem;
+    }
+
+    summary {
+      padding: 1.6rem 2rem;
+      background-color: var(--Primary);
+      border: none;
+      border-bottom: none;
+      cursor: pointer;
+      list-style: none;
+
+      @include lg-up {
+        padding: 2rem 3.3rem;
+      }
+
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+
+    .accordion__quesion {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ffffff;
+      position: relative;
+      padding-right: 3.5rem;
+      line-height: normal;
+
+      @include lg-up {
+        font-size: 2.4rem;
+      }
+
+      .icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        @include lg-up {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        width: 1.2rem;
+        height: 0.2rem;
+        background-color: #f0f7ff;
+        position: absolute;
+        right: 0.6rem;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+        border-radius: 50vh;
+
+        @include lg-up {
+          width: 1.6rem;
+          height: 0.26rem;
+          right: 0.8rem;
+        }
+      }
+
+      &::before {
+        transform: translateY(-50%) rotate(90deg);
+      }
+    }
+
+    .accordion__answer {
+      background-color: #f0f7ff;
+    }
+
+    &[open] {
+      .accordion__quesion {
+        &::before {
+          transform: translateY(-50%) rotate(0deg);
+          opacity: 0;
+        }
+
+        &::after {
+          transform: translateY(-50%) rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include lg-up {
+      gap: 2rem;
+    }
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 1.8rem;
+      line-height: normal;
+      color: var(--Black);
+
+      @include lg-up {
+        font-size: 2rem;
+      }
+
+      svg {
+        flex-shrink: 0;
+        width: 1.8rem;
+        height: 1.5rem;
+        margin-top: 0.7rem;
+
+        @include lg-up {
+          width: 1.8rem;
+          height: 1.5rem;
+        }
+      }
+
+      span {
+        flex: 1;
+      }
+    }
+  }
+
+  &__timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 2rem;
+
+    @include lg-up {
+      padding-left: 2.5rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      bottom: 0.5rem;
+      width: 0.1rem;
+      background-color: #9e5d37;
+      border-radius: 10rem;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      font-size: 1.8rem;
+      line-height: normal;
+      color: var(--Black);
+      position: relative;
+      padding-bottom: 2rem;
+
+      @include lg-up {
+        font-size: 2rem;
+        padding-bottom: 2.5rem;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.9rem;
+        left: -2.3rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: #9e5d37;
+        border-radius: 50%;
+
+        @include lg-up {
+          left: -2.8rem;
+          width: 0.7rem;
+          height: 0.7rem;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: -2rem;
+        top: 1.2rem;
+        width: 1.5rem;
+        height: 0.1rem;
+        background-color: #9e5d37;
+        border-radius: 10rem;
+
+        @include lg-up {
+          left: -2.5rem;
+          width: 2rem;
+        }
+      }
+
+      strong {
+        font-weight: 700;
+        font-size: 1.8rem;
+        line-height: normal;
+        color: var(--Black);
+
+        @include lg-up {
+          font-size: 2rem;
+        }
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: normal;
+        color: var(--Black);
+
+        @include lg-up {
+          font-size: 2rem;
+        }
+      }
+
+      &:last-child {
+        span {
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: -2.2rem;
+            top: -0.8rem;
+            width: 0.5rem;
+            height: 32px;
+            display: block;
+
+            background-color: #F0F7FF;
+            @include lg-up {
+              left: -2.7rem;
+              top: -0.99rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btns-wrp {
+    margin-top: 1rem;
+    justify-content: flex-start;
+  }
+
+  details.rn-process-steps__item .accordion__answer {
+    background-color: var(--Primary);
+    padding: 1.5rem;
+    padding-top: 0 !important;
+    @include lg-up {
+      padding: 2.5rem;
+    }
+
+    .accordion__answer-inner {
+      background-color: #F0F7FF;
+      border-radius: 1.46rem;
+      padding: 2rem;
+    }
+  }
+}
+.rh-banner-img{
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
